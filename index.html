@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorteo Mundial</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#004d40,#1b5e20);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+width:350px;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+h1{
+color:#0b8043;
+}
+
+select,button{
+width:100%;
+padding:12px;
+margin-top:15px;
+font-size:16px;
+border-radius:10px;
+}
+
+button{
+background:#0b8043;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+#resultado{
+margin-top:25px;
+font-size:24px;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>🏆 Sorteo Mundial ⚽</h1>
+
+<p>Selecciona tu nombre:</p>
+
+<select id="persona">
+<option>Luis</option>
+<option>Vicky</option>
+<option>Adrián</option>
+<option>Josué</option>
+<option>Ximena</option>
+<option>Aurelia</option>
+<option>Pao</option>
+<option>Eva</option>
+</select>
+
+<button onclick="mostrar()">Ver mi equipo</button>
+
+<div id="resultado"></div>
+</div>
+
+<script>
+
+const equipos = {
+"Luis":"🇫🇷 Francia",
+"Vicky":"🇲🇦 Marruecos",
+"Adrián":"🏴 Inglaterra",
+"Josué":"🇨🇭 Suiza",
+"Ximena":"🇧🇪 Bélgica",
+"Aurelia":"🇳🇴 Noruega",
+"Pao":"🇦🇷 Argentina",
+"Eva":"🇪🇸 España"
+};
+
+function mostrar(){
+const nombre=document.getElementById("persona").value;
+document.getElementById("resultado").innerHTML=
+🎉<br>${nombre}<br><br>Tu equipo es:<br>${equipos[nombre]};
+}
+
+</script>
+
+</body>
+</html>

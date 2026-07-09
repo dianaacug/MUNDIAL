@@ -44,17 +44,24 @@ border:none;
 cursor:pointer;
 }
 
+button:hover{
+background:#095c32;
+}
+
 #resultado{
 margin-top:25px;
 font-size:24px;
 font-weight:bold;
+color:#0b8043;
 }
 </style>
+
 </head>
 
 <body>
 
 <div class="card">
+
 <h1>🏆 Sorteo Mundial ⚽</h1>
 
 <p>Selecciona tu nombre:</p>
@@ -73,7 +80,9 @@ font-weight:bold;
 <button onclick="mostrar()">Ver mi equipo</button>
 
 <div id="resultado"></div>
+
 </div>
+
 
 <script>
 
@@ -88,10 +97,17 @@ const equipos = {
 "Eva":"🇪🇸 España"
 };
 
+
 function mostrar(){
-const nombre=document.getElementById("persona").value;
-document.getElementById("resultado").innerHTML=
-🎉<br>${nombre}<br><br>Tu equipo es:<br>${equipos[nombre]};
+
+let nombre = document.getElementById("persona").value;
+
+let equipo = equipos[nombre];
+
+document.getElementById("resultado").innerHTML =
+"🎉<br>" + nombre + 
+"<br><br>Tu equipo es:<br>" + equipo;
+
 }
 
 </script>

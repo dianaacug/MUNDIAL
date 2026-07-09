@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Sorteo Mundial</title>
 
 <style>
+
 body{
 font-family:Arial,sans-serif;
 background:linear-gradient(135deg,#004d40,#1b5e20);
@@ -45,7 +47,7 @@ cursor:pointer;
 }
 
 button:hover{
-background:#095c32;
+background:#075c31;
 }
 
 #resultado{
@@ -54,6 +56,7 @@ font-size:24px;
 font-weight:bold;
 color:#0b8043;
 }
+
 </style>
 
 </head>
@@ -77,7 +80,7 @@ color:#0b8043;
 <option>Eva</option>
 </select>
 
-<button onclick="alert('Si funciona el botón')">Ver mi equipo</button>
+<button onclick="mostrar()">Ver mi equipo</button>
 
 <div id="resultado"></div>
 
@@ -86,7 +89,11 @@ color:#0b8043;
 
 <script>
 
-const equipos = {
+function mostrar(){
+
+let nombre = document.getElementById("persona").value;
+
+let equipos = {
 "Luis":"🇫🇷 Francia",
 "Vicky":"🇲🇦 Marruecos",
 "Adrián":"🏴 Inglaterra",
@@ -97,20 +104,14 @@ const equipos = {
 "Eva":"🇪🇸 España"
 };
 
-
-function mostrar(){
-
-let nombre = document.getElementById("persona").value;
-
-let equipo = equipos[nombre];
-
 document.getElementById("resultado").innerHTML =
 "🎉<br>" + nombre + 
-"<br><br>Tu equipo es:<br>" + equipo;
+"<br><br>Tu equipo es:<br>" + equipos[nombre];
 
 }
 
 </script>
+
 
 </body>
 </html>
